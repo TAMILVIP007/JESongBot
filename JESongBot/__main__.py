@@ -13,7 +13,7 @@ Heya [{}](tg://user?id={}), I'm Song Downloader Bot 🎵
 Just send me the song name you want to download.
 eg: ```/song Satisfya```
 
-A bot by @Infinity_BOTs
+A bot by @Jarvisbot_support
 """
 
 
