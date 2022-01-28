@@ -18,13 +18,11 @@ def time_to_seconds(time):
 @app.on_message(filters.command('mw'))
 def song(client, message):
 
-    user_id = message.from_user.id 
-    user_name = message.from_user.first_name 
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
     rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
 
-    query = ''
-    for i in message.command[1:]:
-        query += ' ' + str(i)
+    query = ''.join(' ' + str(i) for i in message.command[1:])
     print(query)
     m = message.reply('🔎 Finding the song...')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -46,7 +44,7 @@ def song(client, message):
         m.edit(
             "❌ Found Nothing.\n\nTry another keywork or maybe spell it properly."
         )
-        print(str(e))
+        print(e)
         return
     m.edit("Downloading the song by @jarvisbot_support...")
     try:
